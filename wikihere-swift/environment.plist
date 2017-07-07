@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   environment.plist
+   wikihere-swift
+
+   Created by Jeremy on 7/6/17.
+   Copyright (c) 2017 Maurerhouse. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>environment</key>
+        <string>DEV</string>
+        <key>appName</key>
+        <string>WikiHere!</string>
+        <key>wikiBaseUrl</key>
+        <string>http://en.wikipedia.org/w/api.php?action=query</string>
+    </dict>
+</plist>

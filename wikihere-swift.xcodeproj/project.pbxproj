@@ -15,6 +15,7 @@
 		118592021F0F4B6A00F427F3 /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118591FB1F0F4AA700F427F3 /* Mapper.framework */; };
 		118592051F0F4DD000F427F3 /* WikiEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118592041F0F4DD000F427F3 /* WikiEntries.swift */; };
 		118592081F106E9900F427F3 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118592071F106E9900F427F3 /* WebServices.swift */; };
+		11B673721F833A05006ADF40 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B673711F833A05006ADF40 /* ServiceResult.swift */; };
 		22CEB47F1DDC12AC00F67E1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CEB47E1DDC12AC00F67E1B /* AppDelegate.swift */; };
 		22CEB4811DDC12AC00F67E1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CEB4801DDC12AC00F67E1B /* ViewController.swift */; };
 		22CEB4841DDC12AC00F67E1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CEB4821DDC12AC00F67E1B /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		118592001F0F4B0900F427F3 /* Mapper.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Mapper.framework.dSYM; path = Carthage/Build/iOS/Mapper.framework.dSYM; sourceTree = "<group>"; };
 		118592041F0F4DD000F427F3 /* WikiEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiEntries.swift; sourceTree = "<group>"; };
 		118592071F106E9900F427F3 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		11B673711F833A05006ADF40 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		22CEB47B1DDC12AC00F67E1B /* wikihere-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wikihere-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CEB47E1DDC12AC00F67E1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22CEB4801DDC12AC00F67E1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				118592071F106E9900F427F3 /* WebServices.swift */,
+				11B673711F833A05006ADF40 /* ServiceResult.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */,
 				22CEB4811DDC12AC00F67E1B /* ViewController.swift in Sources */,
 				22CEB47F1DDC12AC00F67E1B /* AppDelegate.swift in Sources */,
+				11B673721F833A05006ADF40 /* ServiceResult.swift in Sources */,
 				118591F61F0F415A00F427F3 /* WikiEntryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

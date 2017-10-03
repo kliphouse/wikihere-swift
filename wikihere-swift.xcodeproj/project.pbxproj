@@ -14,6 +14,7 @@
 		118591F61F0F415A00F427F3 /* WikiEntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591F51F0F415A00F427F3 /* WikiEntryItem.swift */; };
 		118592021F0F4B6A00F427F3 /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118591FB1F0F4AA700F427F3 /* Mapper.framework */; };
 		118592051F0F4DD000F427F3 /* WikiEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118592041F0F4DD000F427F3 /* WikiEntries.swift */; };
+		118592081F106E9900F427F3 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118592071F106E9900F427F3 /* WebServices.swift */; };
 		22CEB47F1DDC12AC00F67E1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CEB47E1DDC12AC00F67E1B /* AppDelegate.swift */; };
 		22CEB4811DDC12AC00F67E1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CEB4801DDC12AC00F67E1B /* ViewController.swift */; };
 		22CEB4841DDC12AC00F67E1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CEB4821DDC12AC00F67E1B /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		118591FB1F0F4AA700F427F3 /* Mapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapper.framework; path = Carthage/Build/iOS/Mapper.framework; sourceTree = "<group>"; };
 		118592001F0F4B0900F427F3 /* Mapper.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Mapper.framework.dSYM; path = Carthage/Build/iOS/Mapper.framework.dSYM; sourceTree = "<group>"; };
 		118592041F0F4DD000F427F3 /* WikiEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiEntries.swift; sourceTree = "<group>"; };
+		118592071F106E9900F427F3 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		22CEB47B1DDC12AC00F67E1B /* wikihere-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wikihere-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CEB47E1DDC12AC00F67E1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22CEB4801DDC12AC00F67E1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		118592061F106E5F00F427F3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				118592071F106E9900F427F3 /* WebServices.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		22CEB4721DDC12A900F67E1B = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		22CEB47D1DDC12AC00F67E1B /* wikihere-swift */ = {
 			isa = PBXGroup;
 			children = (
+				118592061F106E5F00F427F3 /* Service */,
 				118591F41F0F40EC00F427F3 /* Model */,
 				22CEB47E1DDC12AC00F67E1B /* AppDelegate.swift */,
 				22CEB4801DDC12AC00F67E1B /* ViewController.swift */,
@@ -140,11 +151,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Maurerhouse;
 				TargetAttributes = {
 					22CEB47A1DDC12A900F67E1B = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -206,6 +218,7 @@
 			files = (
 				118592051F0F4DD000F427F3 /* WikiEntries.swift in Sources */,
 				118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */,
+				118592081F106E9900F427F3 /* WebServices.swift in Sources */,
 				118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */,
 				22CEB4811DDC12AC00F67E1B /* ViewController.swift in Sources */,
 				22CEB47F1DDC12AC00F67E1B /* AppDelegate.swift in Sources */,
@@ -244,7 +257,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -252,7 +267,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -294,7 +314,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -302,7 +324,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -340,7 +367,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.Maynotbe.wikihere-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -356,7 +384,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.Maynotbe.wikihere-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

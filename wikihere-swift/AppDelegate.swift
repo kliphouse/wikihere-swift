@@ -19,54 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("AppName %@", Environment.sharedInstance.appName)
         NSLog("wikiBaseUrl %@", Environment.sharedInstance.wikiBaseUrl)
         
-        let config = URLSessionConfiguration.default // Session Configuration
-        let session = URLSession(configuration: config) // Load configuration into Session
-        
-        let lat = 37.7858
-        let long = -122.406
-        
-        let urlString = Environment.sharedInstance.wikiBaseUrl +
-            "&list=geosearch" + // Asking Wikipedia to do a geosearch
-            "&format=json" + // Make sure the format is JSON
-            "&gslimit=50" + // Limit articles to return, hard set to 50
-            "&gsmaxdim=3000" + // Limit articles to Wikipedia geo dimension size, hard set to 3000
-            "&gsradius=5000" + // Max search radius
-            "&gscoord=\(lat)|\(long)" // Lat/Long to conduct search around
-        
-        let escapedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        
-        let url = URL(string: escapedUrlString!)!
-        
-        let task = session.dataTask(with: url, completionHandler: {
-            (data, response, error) in
-            
-            if error != nil {
-                
-                print(error!.localizedDescription)
-                
-            } else {
-                
-                if let urlContent = data {
-                    
-                    do {
-                        
-                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options:
-                            JSONSerialization.ReadingOptions.mutableContainers)
-                        
-                        let wikiEntries = WikiEntries.from(jsonResult as! NSDictionary)
-                        
-                        dLog(message: "ok then")
-                        
-                        
-                    } catch {
-                        
-                        print("JSON Processing Failed")
-                    }
-                }
-            }
-            
-        })
-        task.resume()
         
         
         

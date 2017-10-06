@@ -12,17 +12,34 @@
         <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="wikihere_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="kfg-t0-pg8"/>
+                        <viewControllerLayoutGuide type="bottom" id="TEU-3u-KVr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fud-07-qiU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7YS-41-ZY2"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fud-07-qiU" secondAttribute="trailing" id="04M-oK-0ix"/>
+                            <constraint firstItem="fud-07-qiU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9UT-W6-fVf"/>
+                            <constraint firstItem="fud-07-qiU" firstAttribute="top" secondItem="kfg-t0-pg8" secondAttribute="bottom" id="HLM-ea-Lr3"/>
+                            <constraint firstItem="TEU-3u-KVr" firstAttribute="top" secondItem="fud-07-qiU" secondAttribute="bottom" id="iUd-OW-mE6"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="location-pin" landscapeImage="location-pin" id="3L1-K7-NQx"/>
+                    <connections>
+                        <outlet property="mapView" destination="fud-07-qiU" id="5ta-v3-anE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,8 +50,8 @@
             <objects>
                 <viewController id="7lT-yB-2KW" customClass="ListViewController" customModule="wikihere_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YVX-lL-zQ7"/>
-                        <viewControllerLayoutGuide type="bottom" id="Do3-4T-3m7"/>
+                        <viewControllerLayoutGuide type="top" id="9Ej-c7-UUN"/>
+                        <viewControllerLayoutGuide type="bottom" id="R9a-XJ-STt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TKW-DQ-ak0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -79,10 +96,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HGP-VG-AR3" firstAttribute="top" secondItem="YVX-lL-zQ7" secondAttribute="bottom" id="Zhj-lJ-Yoj"/>
+                            <constraint firstItem="HGP-VG-AR3" firstAttribute="top" secondItem="9Ej-c7-UUN" secondAttribute="bottom" id="Zhj-lJ-Yoj"/>
                             <constraint firstAttribute="trailing" secondItem="HGP-VG-AR3" secondAttribute="trailing" id="bUZ-7f-FBC"/>
                             <constraint firstItem="HGP-VG-AR3" firstAttribute="leading" secondItem="TKW-DQ-ak0" secondAttribute="leading" id="gIU-6u-qna"/>
-                            <constraint firstItem="Do3-4T-3m7" firstAttribute="top" secondItem="HGP-VG-AR3" secondAttribute="bottom" id="sq1-SG-OnX"/>
+                            <constraint firstItem="R9a-XJ-STt" firstAttribute="top" secondItem="HGP-VG-AR3" secondAttribute="bottom" id="sq1-SG-OnX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="script" landscapeImage="script" id="f90-5E-pra"/>
@@ -99,8 +116,8 @@
             <objects>
                 <viewController id="Qog-XI-tzJ" customClass="SettingsViewController" customModule="wikihere_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pGO-Lg-sXx"/>
-                        <viewControllerLayoutGuide type="bottom" id="cET-g4-a7b"/>
+                        <viewControllerLayoutGuide type="top" id="Zql-m3-vML"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tdg-xR-TxK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9UN-Oi-lS3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -119,6 +136,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zJW-QV-W7G" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m6a-fg-x2A">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

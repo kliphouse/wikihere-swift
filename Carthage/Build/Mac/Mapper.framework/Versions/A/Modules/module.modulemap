@@ -1,4 +1,0 @@
-framework module Mapper {
-    header "Mapper-Swift.h"
-    requires objc
-}

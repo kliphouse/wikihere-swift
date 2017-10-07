@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112FA9D61F8885E2005158DF /* WikiHereColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9D51F8885E2005158DF /* WikiHereColors.swift */; };
+		112FA9D91F888CA0005158DF /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112FA9D71F888CA0005158DF /* RxCocoa.framework */; };
+		112FA9DA1F888CA0005158DF /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112FA9D81F888CA0005158DF /* RxSwift.framework */; };
+		112FA9DC1F88919D005158DF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112FA9DB1F88919D005158DF /* Alamofire.framework */; };
+		112FA9DF1F8891D6005158DF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9DE1F8891D6005158DF /* MapViewModel.swift */; };
+		112FA9E11F88929D005158DF /* WikiEntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E01F88929D005158DF /* WikiEntryService.swift */; };
+		112FA9E31F88945F005158DF /* WikiEntryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E21F88945F005158DF /* WikiEntryAPI.swift */; };
 		118591E51F0F237400F427F3 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 118591E41F0F237400F427F3 /* Cartfile */; };
 		118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591EC1F0F2B9800F427F3 /* Macros.swift */; };
 		118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591EE1F0F2F7A00F427F3 /* Environment.swift */; };
@@ -27,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112FA9D51F8885E2005158DF /* WikiHereColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiHereColors.swift; sourceTree = "<group>"; };
+		112FA9D71F888CA0005158DF /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		112FA9D81F888CA0005158DF /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		112FA9DB1F88919D005158DF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		112FA9DE1F8891D6005158DF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		112FA9E01F88929D005158DF /* WikiEntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntryService.swift; sourceTree = "<group>"; };
+		112FA9E21F88945F005158DF /* WikiEntryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntryAPI.swift; sourceTree = "<group>"; };
 		118591E41F0F237400F427F3 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		118591EC1F0F2B9800F427F3 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		118591EE1F0F2F7A00F427F3 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -55,15 +69,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				118592021F0F4B6A00F427F3 /* Mapper.framework in Frameworks */,
+				112FA9DC1F88919D005158DF /* Alamofire.framework in Frameworks */,
+				112FA9D91F888CA0005158DF /* RxCocoa.framework in Frameworks */,
+				112FA9DA1F888CA0005158DF /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112FA9D41F8885B9005158DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				112FA9D51F8885E2005158DF /* WikiHereColors.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		112FA9DD1F8891BF005158DF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				112FA9DE1F8891D6005158DF /* MapViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
 		118591E81F0F250200F427F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				112FA9DB1F88919D005158DF /* Alamofire.framework */,
+				112FA9D71F888CA0005158DF /* RxCocoa.framework */,
+				112FA9D81F888CA0005158DF /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,6 +128,8 @@
 			children = (
 				118592071F106E9900F427F3 /* WebServices.swift */,
 				11B673711F833A05006ADF40 /* ServiceResult.swift */,
+				112FA9E01F88929D005158DF /* WikiEntryService.swift */,
+				112FA9E21F88945F005158DF /* WikiEntryAPI.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -137,6 +175,8 @@
 		22CEB47D1DDC12AC00F67E1B /* wikihere-swift */ = {
 			isa = PBXGroup;
 			children = (
+				112FA9DD1F8891BF005158DF /* ViewModels */,
+				112FA9D41F8885B9005158DF /* Extensions */,
 				11B673781F8344BA006ADF40 /* Views */,
 				11B673731F834051006ADF40 /* View Controllers */,
 				118592061F106E5F00F427F3 /* Service */,
@@ -231,6 +271,9 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Mapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -249,11 +292,15 @@
 				11B6737A1F834517006ADF40 /* WikiEntryItemListTableViewCell.swift in Sources */,
 				118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */,
 				118592081F106E9900F427F3 /* WebServices.swift in Sources */,
+				112FA9DF1F8891D6005158DF /* MapViewModel.swift in Sources */,
 				11B673771F8340F6006ADF40 /* SettingsViewController.swift in Sources */,
 				118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */,
 				22CEB4811DDC12AC00F67E1B /* MapViewController.swift in Sources */,
 				11B673751F8340E5006ADF40 /* ListViewController.swift in Sources */,
 				22CEB47F1DDC12AC00F67E1B /* AppDelegate.swift in Sources */,
+				112FA9E11F88929D005158DF /* WikiEntryService.swift in Sources */,
+				112FA9E31F88945F005158DF /* WikiEntryAPI.swift in Sources */,
+				112FA9D61F8885E2005158DF /* WikiHereColors.swift in Sources */,
 				11B673721F833A05006ADF40 /* ServiceResult.swift in Sources */,
 				118591F61F0F415A00F427F3 /* WikiEntryItem.swift in Sources */,
 			);

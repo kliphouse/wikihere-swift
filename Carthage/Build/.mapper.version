@@ -1,26 +1,26 @@
 {
   "iOS" : [
     {
-      "hash" : "d0708aa4d740d6d14d5ac5e821b1243226e8c953b869bc13df5d30dea0fc723c",
+      "hash" : "f62d2d5b239d422b12803b6af19b409687c805559cefe973875b9af5d4aa0d42",
       "name" : "Mapper"
     }
   ],
   "commitish" : "6.0.0",
   "watchOS" : [
     {
-      "hash" : "868cfb7e1a92c208138d4f8704e27871bc38bfb25b4aba17b795b5e61c9dfd20",
+      "hash" : "32ee936c7b88d2eafd325dc777d714fd02d928ddf5f85c8f7f14575eceb5ebdf",
       "name" : "Mapper"
     }
   ],
   "tvOS" : [
     {
-      "hash" : "dafdda97b99af64b84b04a2d397008da1f1d05ba485dcf270c6c29bf3922e1e0",
+      "hash" : "d2d3d30beae8569246bce966e1b72c07eb74de1b7742f9fa1fc5d3eecf7e6363",
       "name" : "Mapper"
     }
   ],
   "Mac" : [
     {
-      "hash" : "3b1b736bc2e28bf16a172682e0ab222dce9704ceac3ef7b0a7a2ea21caac61a8",
+      "hash" : "159780d9f1378723ef9acb0133fe5bf1441a7fc21dea48e1bb794c6201ad1d32",
       "name" : "Mapper"
     }
   ]

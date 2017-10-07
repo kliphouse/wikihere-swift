@@ -14,6 +14,7 @@ enum ServiceErrorCode : String {
     case LocalError = "LocalError"
     case UrlError = "UrlError"
     case JsonMapError = "JsonMapError"
+    case Parsing = "Parsing"
 }
 
 // MARK: - ServiceError

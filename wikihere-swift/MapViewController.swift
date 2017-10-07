@@ -16,6 +16,8 @@ class MapViewController: UIViewController {
     private var locationManager: CLLocationManager!
     private var currentLocation: CLLocation?
     
+    private var wikiEntries: WikiEntries?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +25,8 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         setUpLocationManager()
         
+        let viewModel = MapViewModel(wikiEntryService: WikiEntryAPI(), geopoint: CLLocation(latitude: 39.7233, longitude: -77.3939))
+        viewModel.getWikiEntries()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +45,13 @@ class MapViewController: UIViewController {
         }
     }
 
+    func fetchNearbyEntries() {
+        guard let location = currentLocation else {
+            return
+        }
+        
+        
+    }
 
 }
 
@@ -51,6 +62,7 @@ extension MapViewController: CLLocationManagerDelegate {
         if currentLocation == nil {
             // Zoom to user location
             if let userLocation = locations.last {
+
                 let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 2000, 2000)
                 mapView.setRegion(viewRegion, animated: false)
             }

@@ -44,6 +44,14 @@ class MapViewController: UIViewController {
             let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000, 2000)
             self.mapView.setRegion(region, animated: true)
         }).addDisposableTo(disposeBag)
+        
+        viewModel.wikiEntries.subscribe(onNext: { (wikiEntries) in
+            
+            let annotations = wikiEntries.items.map {
+                return WikiAnnotation(item: $0)
+            }
+            self.mapView.addAnnotations(annotations)
+        }).addDisposableTo(disposeBag)
     }
 
 }

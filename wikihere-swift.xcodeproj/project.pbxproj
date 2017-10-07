@@ -16,6 +16,7 @@
 		112FA9E31F88945F005158DF /* WikiEntryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E21F88945F005158DF /* WikiEntryAPI.swift */; };
 		112FA9E51F8914D2005158DF /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */; };
 		112FA9E71F891529005158DF /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E61F891529005158DF /* RxCLLocationManagerDelegateProxy.swift */; };
+		112FA9E91F896392005158DF /* WikiAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E81F896392005158DF /* WikiAnnotation.swift */; };
 		118591E51F0F237400F427F3 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 118591E41F0F237400F427F3 /* Cartfile */; };
 		118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591EC1F0F2B9800F427F3 /* Macros.swift */; };
 		118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591EE1F0F2F7A00F427F3 /* Environment.swift */; };
@@ -45,6 +46,7 @@
 		112FA9E21F88945F005158DF /* WikiEntryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntryAPI.swift; sourceTree = "<group>"; };
 		112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		112FA9E61F891529005158DF /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		112FA9E81F896392005158DF /* WikiAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAnnotation.swift; sourceTree = "<group>"; };
 		118591E41F0F237400F427F3 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		118591EC1F0F2B9800F427F3 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		118591EE1F0F2F7A00F427F3 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				118591F51F0F415A00F427F3 /* WikiEntryItem.swift */,
 				118592041F0F4DD000F427F3 /* WikiEntries.swift */,
+				112FA9E81F896392005158DF /* WikiAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				112FA9DF1F8891D6005158DF /* MapViewModel.swift in Sources */,
 				11B673771F8340F6006ADF40 /* SettingsViewController.swift in Sources */,
 				118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */,
+				112FA9E91F896392005158DF /* WikiAnnotation.swift in Sources */,
 				22CEB4811DDC12AC00F67E1B /* MapViewController.swift in Sources */,
 				11B673751F8340E5006ADF40 /* ListViewController.swift in Sources */,
 				22CEB47F1DDC12AC00F67E1B /* AppDelegate.swift in Sources */,

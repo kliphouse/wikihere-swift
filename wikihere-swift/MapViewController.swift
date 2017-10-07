@@ -8,25 +8,26 @@
 
 import UIKit
 import MapKit
+import RxSwift
+import RxCocoa
 
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    private var locationManager: CLLocationManager!
-    private var currentLocation: CLLocation?
+    let disposeBag = DisposeBag()
     
-    private var wikiEntries: WikiEntries?
+    let viewModel = MapViewModel(wikiEntryService: WikiEntryAPI())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
      
         mapView.delegate = self
-        setUpLocationManager()
         
-        let viewModel = MapViewModel(wikiEntryService: WikiEntryAPI(), geopoint: CLLocation(latitude: 39.7233, longitude: -77.3939))
-        viewModel.getWikiEntries()
+        bindToCurrentLocation()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,40 +35,17 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setUpLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-        }
-    }
-
-    func fetchNearbyEntries() {
-        guard let location = currentLocation else {
-            return
-        }
-        
-        
-    }
-
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        defer { currentLocation = locations.last }
-
-        if currentLocation == nil {
-            // Zoom to user location
-            if let userLocation = locations.last {
-
-                let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 2000, 2000)
-                mapView.setRegion(viewRegion, animated: false)
+    private func bindToCurrentLocation() {
+        viewModel.currentLocation.subscribe(onNext: { (location) in
+            guard let location = location else {
+                return
             }
-        }
+            
+            let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000, 2000)
+            self.mapView.setRegion(region, animated: true)
+        }).addDisposableTo(disposeBag)
     }
+
 }
 
 extension MapViewController: MKMapViewDelegate {

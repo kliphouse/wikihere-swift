@@ -12,24 +12,41 @@ import CoreLocation
 
 class MapViewModel {
     
-    let disposeBag = DisposeBag()
+    private var locationManager: CLLocationManager!
+    
+    var currentLocation: Observable<CLLocation?>
+    let wikiEntries: Observable<WikiEntries>
     
     private let wikiEntryService: WikiEntryService
-    private let geopoint: CLLocation
     
-    required init(wikiEntryService: WikiEntryService, geopoint: CLLocation) {
+    required init(wikiEntryService: WikiEntryService) {
+        
         self.wikiEntryService = wikiEntryService
-        self.geopoint = geopoint
+        
+        locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        
+        currentLocation = locationManager.rx.didUpdateLocations.map { locations in
+            return locations.first(where: { location -> Bool in
+                return location.horizontalAccuracy < 20
+            })
+        }
+        
+        wikiEntries = currentLocation.flatMapLatest { location -> Observable<WikiEntries> in
+            guard let location = location else {
+                return Observable<WikiEntries>.empty()
+            }
+            return wikiEntryService.fetchWikiEntries(geopoint: location)
+        }
     }
     
-    private lazy var wikiEntries: Observable<WikiEntries> = self.wikiEntryService.fetchWikiEntries(geopoint: self.geopoint)
-    
-    public func getWikiEntries() {
-        self.wikiEntryService.fetchWikiEntries(geopoint: self.geopoint)
-            .subscribe(onNext: { (element) in
-                print(element)
-            }).addDisposableTo(disposeBag)
-                
-        }
-
+    func setUpLocationManager() {
+        
+    }
 }
+

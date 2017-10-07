@@ -14,6 +14,8 @@
 		112FA9DF1F8891D6005158DF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9DE1F8891D6005158DF /* MapViewModel.swift */; };
 		112FA9E11F88929D005158DF /* WikiEntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E01F88929D005158DF /* WikiEntryService.swift */; };
 		112FA9E31F88945F005158DF /* WikiEntryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E21F88945F005158DF /* WikiEntryAPI.swift */; };
+		112FA9E51F8914D2005158DF /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */; };
+		112FA9E71F891529005158DF /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E61F891529005158DF /* RxCLLocationManagerDelegateProxy.swift */; };
 		118591E51F0F237400F427F3 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 118591E41F0F237400F427F3 /* Cartfile */; };
 		118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591EC1F0F2B9800F427F3 /* Macros.swift */; };
 		118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591EE1F0F2F7A00F427F3 /* Environment.swift */; };
@@ -41,6 +43,8 @@
 		112FA9DE1F8891D6005158DF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		112FA9E01F88929D005158DF /* WikiEntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntryService.swift; sourceTree = "<group>"; };
 		112FA9E21F88945F005158DF /* WikiEntryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntryAPI.swift; sourceTree = "<group>"; };
+		112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
+		112FA9E61F891529005158DF /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		118591E41F0F237400F427F3 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		118591EC1F0F2B9800F427F3 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		118591EE1F0F2F7A00F427F3 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				112FA9D51F8885E2005158DF /* WikiHereColors.swift */,
+				112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */,
+				112FA9E61F891529005158DF /* RxCLLocationManagerDelegateProxy.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				118592051F0F4DD000F427F3 /* WikiEntries.swift in Sources */,
 				11B6737A1F834517006ADF40 /* WikiEntryItemListTableViewCell.swift in Sources */,
 				118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */,
+				112FA9E71F891529005158DF /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				118592081F106E9900F427F3 /* WebServices.swift in Sources */,
 				112FA9DF1F8891D6005158DF /* MapViewModel.swift in Sources */,
 				11B673771F8340F6006ADF40 /* SettingsViewController.swift in Sources */,
@@ -301,6 +308,7 @@
 				112FA9E11F88929D005158DF /* WikiEntryService.swift in Sources */,
 				112FA9E31F88945F005158DF /* WikiEntryAPI.swift in Sources */,
 				112FA9D61F8885E2005158DF /* WikiHereColors.swift in Sources */,
+				112FA9E51F8914D2005158DF /* CLLocationManager+Rx.swift in Sources */,
 				11B673721F833A05006ADF40 /* ServiceResult.swift in Sources */,
 				118591F61F0F415A00F427F3 /* WikiEntryItem.swift in Sources */,
 			);

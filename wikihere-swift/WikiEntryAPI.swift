@@ -16,7 +16,7 @@ struct WikiEntryAPI: WikiEntryService {
     
     func getWikiEntries(geopoint: CLLocation, completion: @escaping (ServiceResult<WikiEntries>) -> Void) {
         
-        Alamofire.request(
+        var request = Alamofire.request(
             URL(string: Environment.sharedInstance.wikiBaseUrl)!,
             method: .get,
             parameters: parameters(lat: geopoint.coordinate.latitude, lon: geopoint.coordinate.longitude))
@@ -38,9 +38,11 @@ struct WikiEntryAPI: WikiEntryService {
                         return
                 }
                 
-                dLog(message: "\(wikiEntries)")
+//                dLog(message: "\(wikiEntries)")
                 completion(ServiceResult.Success(wikiEntries))
         }
+        
+//        debugPrint(request)
     }
     
     private func parameters(lat: Double, lon: Double) -> Dictionary<String, String> {

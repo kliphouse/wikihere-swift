@@ -20,6 +20,6 @@ class WikiAnnotation: NSObject, MKAnnotation {
         coordinate = CLLocationCoordinate2DMake(item.lat, item.lon)
         pageId = "\(item.pageId)"
         title = "\(item.title)"
-        subtitle = String(format: "%d meters", item.dist)
+        subtitle = "\(round((item.dist * 0.000621371) * 100) / 100) miles"
     }
 }

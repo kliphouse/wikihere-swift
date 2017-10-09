@@ -37,15 +37,7 @@ class MapViewModel {
             .flatMap { location -> Observable<WikiEntries> in
                 return wikiEntryService.fetchWikiEntries(geopoint: location)
             }
-        
-        
-//        wikiEntries = currentLocation.flatMapLatest { location -> Observable<WikiEntries> in
-//            guard let location = location else {
-//                return Observable<WikiEntries>.empty()
-//            }
-//            return wikiEntryService.fetchWikiEntries(geopoint: location)
-//        }
-        
+    
         setUpLocationManager()
         
     }

@@ -38,11 +38,11 @@ struct WikiEntryAPI: WikiEntryService {
                         return
                 }
                 
-//                dLog(message: "\(wikiEntries)")
+                dLog(message: "*** WikiEnties: \n\(wikiEntries)")
                 completion(ServiceResult.Success(wikiEntries))
         }
         
-//        debugPrint(request)
+        debugPrint(request)
     }
     
     private func parameters(lat: Double, lon: Double) -> Dictionary<String, String> {

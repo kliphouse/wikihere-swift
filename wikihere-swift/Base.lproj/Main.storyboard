@@ -27,13 +27,26 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7YS-41-ZY2"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFJ-Ka-Bdv">
+                                <rect key="frame" x="323" y="566" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4ni-G7-M3U"/>
+                                    <constraint firstAttribute="width" constant="40" id="5lp-wL-GWW"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="LocationArrow"/>
+                                <connections>
+                                    <action selector="returnToUserLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZMq-GX-V08"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fud-07-qiU" secondAttribute="trailing" id="04M-oK-0ix"/>
+                            <constraint firstItem="TEU-3u-KVr" firstAttribute="top" secondItem="FFJ-Ka-Bdv" secondAttribute="bottom" constant="12" id="5aO-eY-OwC"/>
                             <constraint firstItem="fud-07-qiU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9UT-W6-fVf"/>
                             <constraint firstItem="fud-07-qiU" firstAttribute="top" secondItem="kfg-t0-pg8" secondAttribute="bottom" id="HLM-ea-Lr3"/>
                             <constraint firstItem="TEU-3u-KVr" firstAttribute="top" secondItem="fud-07-qiU" secondAttribute="bottom" id="iUd-OW-mE6"/>
+                            <constraint firstAttribute="trailing" secondItem="FFJ-Ka-Bdv" secondAttribute="trailing" constant="12" id="r5E-M7-83g"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="location-pin" landscapeImage="location-pin" id="3L1-K7-NQx"/>
@@ -152,6 +165,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LocationArrow" width="45" height="45"/>
         <image name="location-pin" width="24" height="24"/>
         <image name="script" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>

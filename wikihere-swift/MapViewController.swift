@@ -73,7 +73,14 @@ class MapViewController: UIViewController {
         // Check distance to see if we are more than MAX_DIST... from last polled location.
         return location.distance(from: lastWikiEntryLocationUpdate) > MapViewConstants.maxMoveDistanceForUpdate
     }
-
+    
+    
+    @IBAction func returnToUserLocation(_ sender: Any) {
+        
+        let userLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
+        setRegion(location: userLocation)
+    }
+    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -87,7 +94,6 @@ extension MapViewController: MKMapViewDelegate {
         if location.distance(from: self.lastUserLocationUpdate) >= 5000 {
             self.lastUserLocationUpdate = location
             self.setRegion(location: location)
-            self.viewModel.locationForWikiEntries.onNext(location)
         }
         
         if firstUpdate {
@@ -119,6 +125,48 @@ extension MapViewController: MKMapViewDelegate {
             annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             
             return annotationView
+        }
+    }
+    
+    //animate custom pin view drop
+    //https://stackoverflow.com/a/40499511
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        print(#function)
+        
+        var i = -1;
+        for view in views {
+            i += 1;
+            if view.annotation is MKUserLocation {
+                continue;
+            }
+            
+            // Check if current annotation is inside visible map rect, else go to next one
+            let point:MKMapPoint  =  MKMapPointForCoordinate(view.annotation!.coordinate);
+            if (!MKMapRectContainsPoint(self.mapView.visibleMapRect, point)) {
+                continue;
+            }
+            
+            let endFrame:CGRect = view.frame;
+            
+            // Move annotation out of view
+            view.frame = CGRect(origin: CGPoint(x: view.frame.origin.x,y :view.frame.origin.y-self.view.frame.size.height), size: CGSize(width: view.frame.size.width, height: view.frame.size.height))
+            
+            // Animate drop
+            let delay = 0.03 * Double(i)
+            UIView.animate(withDuration: 0.5, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations:{() in
+                view.frame = endFrame
+                // Animate squash
+            }, completion:{(Bool) in
+                UIView.animate(withDuration: 0.05, delay: 0.0, options: UIViewAnimationOptions.curveEaseInOut, animations:{() in
+                    view.transform = CGAffineTransform(scaleX: 1.0, y: 0.6)
+                    
+                }, completion: {(Bool) in
+                    UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveEaseInOut, animations:{() in
+                        view.transform = CGAffineTransform.identity
+                    }, completion: nil)
+                })
+                
+            })
         }
     }
 }

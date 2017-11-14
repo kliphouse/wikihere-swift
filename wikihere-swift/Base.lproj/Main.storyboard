@@ -52,11 +52,12 @@
                     <tabBarItem key="tabBarItem" title="Map" image="location-pin" landscapeImage="location-pin" id="3L1-K7-NQx"/>
                     <connections>
                         <outlet property="mapView" destination="fud-07-qiU" id="5ta-v3-anE"/>
+                        <segue destination="AO6-MW-dOP" kind="presentation" identifier="toWebViewSegue" id="7bL-7N-dju"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1068" y="652"/>
+            <point key="canvasLocation" x="-1080" y="754"/>
         </scene>
         <!--List-->
         <scene sceneID="uaQ-qP-CAa">
@@ -122,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fA1-Fb-IeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346" y="652"/>
+            <point key="canvasLocation" x="-347" y="754"/>
         </scene>
         <!--Settings-->
         <scene sceneID="xNw-91-g9D">
@@ -141,7 +142,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2H-LF-z9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="654"/>
+            <point key="canvasLocation" x="396" y="754"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="XQU-C6-2K9">
+            <objects>
+                <viewController id="AO6-MW-dOP" customClass="WebViewController" customModule="wikihere_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uYX-1P-hUP"/>
+                        <viewControllerLayoutGuide type="bottom" id="mIj-o9-7nw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8WZ-wp-VSi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMk-RN-4YA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="1738"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wr0-HF-7EX">

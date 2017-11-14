@@ -22,7 +22,7 @@ class MapViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    let viewModel = MapViewModel(wikiEntryService: WikiEntryAPI())
+    let viewModel = WikiViewModel.sharedInstance
     
     var lastUserLocationUpdate = CLLocation(latitude: 0, longitude: 0)
     var lastWikiEntryLocationUpdate = CLLocation(latitude: 0, longitude: 0)

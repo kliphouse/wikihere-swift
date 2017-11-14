@@ -16,10 +16,10 @@ struct WikiEntryAPI: WikiEntryService {
     
     func getWikiEntries(geopoint: CLLocation, completion: @escaping (ServiceResult<WikiEntries>) -> Void) {
         
-        var request = Alamofire.request(
+        let request = Alamofire.request(
             URL(string: Environment.sharedInstance.wikiBaseUrl)!,
             method: .get,
-            parameters: parameters(lat: geopoint.coordinate.latitude, lon: geopoint.coordinate.longitude))
+            parameters: geosearchParams(lat: geopoint.coordinate.latitude, lon: geopoint.coordinate.longitude))
             .validate()
             .responseJSON { (response) -> Void in
                 guard response.result.isSuccess else {
@@ -31,21 +31,21 @@ struct WikiEntryAPI: WikiEntryService {
                 
                 guard let value = response.result.value as? NSDictionary,
                     let wikiEntries = WikiEntries.from(value) else {
-                        print("Malformed data received from fetchAllRooms service")
+                        print("Malformed data received from wikientry service")
                         let error = MapperError.convertibleError(value: response, type: String.self)  //TODO: not too sure about this one
                         let serviceError = ServiceError(serviceCode: ServiceErrorCode.LocalError.rawValue, cause: error)
                         completion(ServiceResult.Failure(serviceError))
                         return
                 }
                 
-                dLog(message: "*** WikiEnties: \n\(wikiEntries)")
+                dLog(message: "*** WikiEntries: \n\(wikiEntries)")
                 completion(ServiceResult.Success(wikiEntries))
         }
         
         debugPrint(request)
     }
     
-    private func parameters(lat: Double, lon: Double) -> Dictionary<String, String> {
+    private func geosearchParams(lat: Double, lon: Double) -> Dictionary<String, String> {
         return [
             "list" : "geosearch", // Asking Wikipedia to do a geosearch
             "format" : "json", // Make sure the format is JSON

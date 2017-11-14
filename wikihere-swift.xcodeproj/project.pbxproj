@@ -11,7 +11,7 @@
 		112FA9D91F888CA0005158DF /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112FA9D71F888CA0005158DF /* RxCocoa.framework */; };
 		112FA9DA1F888CA0005158DF /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112FA9D81F888CA0005158DF /* RxSwift.framework */; };
 		112FA9DC1F88919D005158DF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112FA9DB1F88919D005158DF /* Alamofire.framework */; };
-		112FA9DF1F8891D6005158DF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9DE1F8891D6005158DF /* MapViewModel.swift */; };
+		112FA9DF1F8891D6005158DF /* WikiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9DE1F8891D6005158DF /* WikiViewModel.swift */; };
 		112FA9E11F88929D005158DF /* WikiEntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E01F88929D005158DF /* WikiEntryService.swift */; };
 		112FA9E31F88945F005158DF /* WikiEntryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E21F88945F005158DF /* WikiEntryAPI.swift */; };
 		112FA9E51F8914D2005158DF /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */; };
@@ -29,6 +29,7 @@
 		11B673751F8340E5006ADF40 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B673741F8340E5006ADF40 /* ListViewController.swift */; };
 		11B673771F8340F6006ADF40 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B673761F8340F6006ADF40 /* SettingsViewController.swift */; };
 		11B6737A1F834517006ADF40 /* WikiEntryItemListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B673791F834517006ADF40 /* WikiEntryItemListTableViewCell.swift */; };
+		11FB1BF11F8B33A9009217ED /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB1BF01F8B33A9009217ED /* WebViewController.swift */; };
 		22CEB47F1DDC12AC00F67E1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CEB47E1DDC12AC00F67E1B /* AppDelegate.swift */; };
 		22CEB4811DDC12AC00F67E1B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CEB4801DDC12AC00F67E1B /* MapViewController.swift */; };
 		22CEB4841DDC12AC00F67E1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CEB4821DDC12AC00F67E1B /* Main.storyboard */; };
@@ -41,7 +42,7 @@
 		112FA9D71F888CA0005158DF /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		112FA9D81F888CA0005158DF /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		112FA9DB1F88919D005158DF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		112FA9DE1F8891D6005158DF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		112FA9DE1F8891D6005158DF /* WikiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiViewModel.swift; sourceTree = "<group>"; };
 		112FA9E01F88929D005158DF /* WikiEntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntryService.swift; sourceTree = "<group>"; };
 		112FA9E21F88945F005158DF /* WikiEntryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntryAPI.swift; sourceTree = "<group>"; };
 		112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		11B673741F8340E5006ADF40 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		11B673761F8340F6006ADF40 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		11B673791F834517006ADF40 /* WikiEntryItemListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiEntryItemListTableViewCell.swift; sourceTree = "<group>"; };
+		11FB1BF01F8B33A9009217ED /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		22CEB47B1DDC12AC00F67E1B /* wikihere-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wikihere-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CEB47E1DDC12AC00F67E1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22CEB4801DDC12AC00F67E1B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 		112FA9DD1F8891BF005158DF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				112FA9DE1F8891D6005158DF /* MapViewModel.swift */,
+				112FA9DE1F8891D6005158DF /* WikiViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -149,6 +151,7 @@
 				22CEB4801DDC12AC00F67E1B /* MapViewController.swift */,
 				11B673741F8340E5006ADF40 /* ListViewController.swift */,
 				11B673761F8340F6006ADF40 /* SettingsViewController.swift */,
+				11FB1BF01F8B33A9009217ED /* WebViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -297,12 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11FB1BF11F8B33A9009217ED /* WebViewController.swift in Sources */,
 				118592051F0F4DD000F427F3 /* WikiEntries.swift in Sources */,
 				11B6737A1F834517006ADF40 /* WikiEntryItemListTableViewCell.swift in Sources */,
 				118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */,
 				112FA9E71F891529005158DF /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				118592081F106E9900F427F3 /* WebServices.swift in Sources */,
-				112FA9DF1F8891D6005158DF /* MapViewModel.swift in Sources */,
+				112FA9DF1F8891D6005158DF /* WikiViewModel.swift in Sources */,
 				11B673771F8340F6006ADF40 /* SettingsViewController.swift in Sources */,
 				118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */,
 				112FA9E91F896392005158DF /* WikiAnnotation.swift in Sources */,

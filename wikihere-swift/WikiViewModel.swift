@@ -10,7 +10,9 @@ import RxCocoa
 import RxSwift
 import CoreLocation
 
-class MapViewModel {
+class WikiViewModel {
+    
+    static let sharedInstance = WikiViewModel()
     
     private var locationManager = CLLocationManager()
     
@@ -23,7 +25,7 @@ class MapViewModel {
     
     private let wikiEntryService: WikiEntryService
     
-    required init(wikiEntryService: WikiEntryService) {
+    required init(wikiEntryService: WikiEntryService = WikiEntryAPI()) {
         
         self.wikiEntryService = wikiEntryService
         

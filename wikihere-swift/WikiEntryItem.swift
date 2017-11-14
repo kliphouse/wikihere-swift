@@ -15,6 +15,7 @@ struct WikiEntryItem: Mappable {
     let lat: Double
     let lon: Double
     let dist: Double
+    let imageUrl: String = ""
     
     init(map: Mapper) throws {
         try pageId = map.from("pageid")

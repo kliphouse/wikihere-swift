@@ -16,10 +16,13 @@ class WikiAnnotation: NSObject, MKAnnotation {
     let subtitle: String?
     let coordinate: CLLocationCoordinate2D
     
-    init(item: WikiEntryItem)  {
-        coordinate = CLLocationCoordinate2DMake(item.lat, item.lon)
+    init(item: WikiEntryItem, currentLocation: CLLocation)  {
+        coordinate = item.coordinate
         pageId = "\(item.pageId)"
         title = "\(item.title)"
-        subtitle = "\(round((item.dist * 0.000621371) * 100) / 100) miles"
+        
+        let itemLocation = CLLocation(coordinate2D: item.coordinate)
+        let distanceInMeters = currentLocation.distance(from: itemLocation)
+        subtitle = "\(round((distanceInMeters * 0.000621371) * 100) / 100) miles"
     }
 }

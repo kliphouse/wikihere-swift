@@ -52,7 +52,7 @@ class MapViewController: UIViewController {
             
             //add new annotations
             let annotations = wikiEntries.items.map {
-                return WikiAnnotation(item: $0)
+                return WikiAnnotation(item: $0, currentLocation: self.lastUserLocationUpdate)
             }
             self.mapView.addAnnotations(annotations)
         }).addDisposableTo(disposeBag)

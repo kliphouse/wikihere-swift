@@ -7,21 +7,19 @@
 //
 
 import Mapper
+import CoreLocation
 
 struct WikiEntryItem: Mappable {
     
     let pageId: Int
     let title: String
-    let lat: Double
-    let lon: Double
-    let dist: Double
-    let imageUrl: String = ""
+    let coordinate: CLLocationCoordinate2D
+    let imageUrl: String?
     
     init(map: Mapper) throws {
         try pageId = map.from("pageid")
         try title = map.from("title")
-        try lat = map.from("lat")
-        try lon = map.from("lon")
-        try dist = map.from("dist")
+        try coordinate = map.from("coordinates")
+        imageUrl = map.optionalFrom("thumbnail.source")
     }
 }

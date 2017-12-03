@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 struct MapViewConstants {
     static let maxMoveDistanceForUpdate = 5000.0
@@ -119,13 +120,42 @@ extension MapViewController: MKMapViewDelegate {
         }
             
         else {
-            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
-            annotationView.canShowCallout = true
-            annotationView.image = #imageLiteral(resourceName: "location-pin")
-            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView")
+            
+            if annotationView == nil {
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationView")
+                
+            } else {
+                annotationView!.annotation = annotation
+            }
+            
+            annotationView?.canShowCallout = true
+            annotationView?.image = #imageLiteral(resourceName: "location-pin")
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            
+            
+            
+            configureDetailView(annotationView: annotationView!)
             
             return annotationView
         }
+    }
+    
+    func configureDetailView(annotationView: MKAnnotationView) {
+        
+        let snapshotView = UIImageView()
+        let views = ["snapshotView": snapshotView]
+        snapshotView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[snapshotView(300)]", options: [], metrics: nil, views: views))
+        snapshotView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[snapshotView(200)]", options: [], metrics: nil, views: views))
+    
+        guard let wikiAnnotation = annotationView.annotation as? WikiAnnotation,
+            let urlString = wikiAnnotation.imageUrl() else {
+            return
+        }
+        let url = URL(string: urlString)
+        snapshotView.kf.setImage(with: url)
+        
+        annotationView.detailCalloutAccessoryView = snapshotView
     }
     
     //animate custom pin view drop

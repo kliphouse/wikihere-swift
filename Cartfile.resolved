@@ -1,3 +1,4 @@
 github "Alamofire/Alamofire" "4.5.1"
 github "ReactiveX/RxSwift" "3.6.1"
 github "lyft/mapper" "6.0.0"
+github "onevcat/Kingfisher" "4.2.0"

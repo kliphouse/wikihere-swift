@@ -26,6 +26,7 @@
 		118592051F0F4DD000F427F3 /* WikiEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118592041F0F4DD000F427F3 /* WikiEntries.swift */; };
 		118592081F106E9900F427F3 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118592071F106E9900F427F3 /* WebServices.swift */; };
 		118C57131FBAA11500E28FDD /* CLLocation+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C57121FBAA11500E28FDD /* CLLocation+Mapper.swift */; };
+		118C57151FBBCDD100E28FDD /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118C57141FBBCDD100E28FDD /* Kingfisher.framework */; };
 		11B673721F833A05006ADF40 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B673711F833A05006ADF40 /* ServiceResult.swift */; };
 		11B673751F8340E5006ADF40 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B673741F8340E5006ADF40 /* ListViewController.swift */; };
 		11B673771F8340F6006ADF40 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B673761F8340F6006ADF40 /* SettingsViewController.swift */; };
@@ -59,6 +60,7 @@
 		118592041F0F4DD000F427F3 /* WikiEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiEntries.swift; sourceTree = "<group>"; };
 		118592071F106E9900F427F3 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		118C57121FBAA11500E28FDD /* CLLocation+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Mapper.swift"; sourceTree = "<group>"; };
+		118C57141FBBCDD100E28FDD /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		11B673711F833A05006ADF40 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		11B673741F8340E5006ADF40 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		11B673761F8340F6006ADF40 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				112FA9DC1F88919D005158DF /* Alamofire.framework in Frameworks */,
 				112FA9D91F888CA0005158DF /* RxCocoa.framework in Frameworks */,
 				112FA9DA1F888CA0005158DF /* RxSwift.framework in Frameworks */,
+				118C57151FBBCDD100E28FDD /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +113,7 @@
 		118591E81F0F250200F427F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				118C57141FBBCDD100E28FDD /* Kingfisher.framework */,
 				112FA9DB1F88919D005158DF /* Alamofire.framework */,
 				112FA9D71F888CA0005158DF /* RxCocoa.framework */,
 				112FA9D81F888CA0005158DF /* RxSwift.framework */,
@@ -289,6 +293,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputPaths = (
 			);

@@ -45,14 +45,30 @@ struct WikiEntryAPI: WikiEntryService {
         debugPrint(request)
     }
     
+//    private func geosearchParams(lat: Double, lon: Double) -> Dictionary<String, String> {
+//        return [
+//            "list" : "geosearch", // Asking Wikipedia to do a geosearch
+//            "format" : "json", // Make sure the format is JSON
+//            "gslimit" : "50",  // Limit articles to return, hard set to 50
+//            "gsmaxdim" : "3000", // Limit articles to Wikipedia geo dimension size, hard set to 3000
+//            "gsradius" : "5000",  // Max search radius
+//            "gscoord" : "\(lat)|\(lon)" // Lat/Long to conduct search around
+//        ]
+//    }
+    
     private func geosearchParams(lat: Double, lon: Double) -> Dictionary<String, String> {
         return [
-            "list" : "geosearch", // Asking Wikipedia to do a geosearch
+            "action": "query",
+            "prop": "coordinates|pageimages",
+            "piprop": "thumbnail",
+            "pithumbsize": "144",
+            "generator": "geosearch",
             "format" : "json", // Make sure the format is JSON
-            "gslimit" : "50",  // Limit articles to return, hard set to 50
-            "gsmaxdim" : "3000", // Limit articles to Wikipedia geo dimension size, hard set to 3000
-            "gsradius" : "5000",  // Max search radius
-            "gscoord" : "\(lat)|\(lon)" // Lat/Long to conduct search around
+            "formatversion": "2",
+//            "ggslimit" : "50",  // Limit articles to return, hard set to 50
+//            "ggsmaxdim" : "3000", // Limit articles to Wikipedia geo dimension size, hard set to 3000
+            "ggsradius" : "5000",  // Max search radius
+            "ggscoord" : "\(lat)|\(lon)" // Lat/Long to conduct search around
         ]
     }
 }

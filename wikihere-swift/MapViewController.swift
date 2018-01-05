@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 struct MapViewConstants {
     static let maxMoveDistanceForUpdate = 5000.0
@@ -28,6 +29,8 @@ class MapViewController: UIViewController {
     var lastWikiEntryLocationUpdate = CLLocation(latitude: 0, longitude: 0)
     
     var firstUpdate = true
+    
+    var currentPageId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +55,7 @@ class MapViewController: UIViewController {
             
             //add new annotations
             let annotations = wikiEntries.items.map {
-                return WikiAnnotation(item: $0)
+                return WikiAnnotation(item: $0, currentLocation: self.lastUserLocationUpdate)
             }
             self.mapView.addAnnotations(annotations)
         }).addDisposableTo(disposeBag)
@@ -119,13 +122,93 @@ extension MapViewController: MKMapViewDelegate {
         }
             
         else {
-            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
-            annotationView.canShowCallout = true
-            annotationView.image = #imageLiteral(resourceName: "location-pin")
-            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView")
+            
+            if annotationView == nil {
+                annotationView = WikiAnnotationView(annotation: annotation, reuseIdentifier: "annotationView")
+                
+            } else {
+                annotationView!.annotation = annotation
+            }
+            
+            annotationView?.canShowCallout = false
+            annotationView?.image = #imageLiteral(resourceName: "location-pin")
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             
             return annotationView
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        var calloutView: WikiCalloutView
+        
+        guard let wikiAnnotation = view.annotation as? WikiAnnotation else {
+                return
+        }
+        
+        if let urlString = wikiAnnotation.imageUrl() {
+            let url = URL(string: urlString)
+            calloutView = wikiCalloutView(wikiAnnotation: wikiAnnotation, url: url)
+        } else {
+            calloutView = wikiCalloutView(wikiAnnotation: wikiAnnotation, url: nil)
+        }
+        
+        view.addSubview(calloutView)
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        if view.isKind(of: WikiAnnotationView.self)
+        {
+            for subview in view.subviews
+            {
+                subview.removeFromSuperview()
+            }
+        }
+    }
+    
+    @objc func viewArticle(sender: UIButton) {
+        //TODO: seque to web view controller to view article
+        print("Callout view clicked")
+        
+        performSegue(withIdentifier: "toWebViewSegue", sender: sender)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWebViewSegue" {
+            if let pageId = currentPageId {
+                let webView = segue.destination as! WebViewController
+                webView.pageId = pageId
+            }
+        }
+    }
+    
+    func wikiCalloutView(wikiAnnotation: WikiAnnotation, url: URL?) -> WikiCalloutView {
+        
+        let views = Bundle.main.loadNibNamed(WikiCalloutView.identifier, owner: nil, options: nil)
+        let calloutView = views?[0] as! WikiCalloutView
+        calloutView.titleLabel.text = wikiAnnotation.title
+        calloutView.distLabel.text = wikiAnnotation.subtitle
+        
+        currentPageId = wikiAnnotation.pageId
+
+        calloutView.imageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "placeholder"))
+        
+        calloutView.imageView.layer.cornerRadius = 4
+        calloutView.imageView.layer.masksToBounds = true
+        
+        let button = UIButton(frame: calloutView.frame)
+        button.addTarget(self, action: #selector(viewArticle(sender:)), for: .touchUpInside)
+        calloutView.addSubview(button)
+        
+        //TODO: could just pass the view to the function - what's more clear?
+        if let annotationView = self.mapView.view(for: wikiAnnotation) {
+            calloutView.center = CGPoint(x: annotationView.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+        }
+        
+        return calloutView
+        
     }
     
     //animate custom pin view drop

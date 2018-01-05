@@ -12,6 +12,6 @@ struct WikiEntries: Mappable {
     let items: Array<WikiEntryItem>
     
     init(map: Mapper) throws {
-        items = map.optionalFrom("query.geosearch") ?? []
+        items = map.optionalFrom("query.pages") ?? []
     }
 }

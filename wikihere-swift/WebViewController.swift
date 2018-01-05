@@ -11,13 +11,29 @@ import WebKit
 
 class WebViewController: UIViewController {
     
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var containerView: UIView?
+    var webView: WKWebView?
+    var pageId: String?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let urlString = "http://en.wikipedia.org/wiki/?curid=\(pageId!)"
+        let url = URL(string: urlString)
+        let request = URLRequest(url: url!)
+        
+        webView!.navigationDelegate = self
+        webView!.load(request)
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func loadView() {
+        super.loadView()
+        self.webView = WKWebView()
+        self.view = self.webView
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,4 +52,8 @@ class WebViewController: UIViewController {
     }
     */
 
+}
+
+extension WebViewController: WKNavigationDelegate {
+    
 }

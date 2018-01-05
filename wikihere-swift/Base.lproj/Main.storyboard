@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zJW-QV-W7G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zJW-QV-W7G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -155,8 +155,23 @@
                     <view key="view" contentMode="scaleToFill" id="8WZ-wp-VSi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTk-Fd-Kqx">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qTk-Fd-Kqx" secondAttribute="trailing" id="90f-19-8yn"/>
+                            <constraint firstItem="qTk-Fd-Kqx" firstAttribute="top" secondItem="uYX-1P-hUP" secondAttribute="bottom" id="FIe-V0-UsA"/>
+                            <constraint firstItem="mIj-o9-7nw" firstAttribute="top" secondItem="qTk-Fd-Kqx" secondAttribute="bottom" id="Pam-cG-Jtu"/>
+                            <constraint firstItem="qTk-Fd-Kqx" firstAttribute="leading" secondItem="8WZ-wp-VSi" secondAttribute="leading" id="bjC-7e-sWH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="qTk-Fd-Kqx" id="N9W-mg-uiE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMk-RN-4YA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

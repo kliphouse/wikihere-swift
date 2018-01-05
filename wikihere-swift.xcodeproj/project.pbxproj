@@ -17,6 +17,9 @@
 		112FA9E51F8914D2005158DF /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */; };
 		112FA9E71F891529005158DF /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E61F891529005158DF /* RxCLLocationManagerDelegateProxy.swift */; };
 		112FA9E91F896392005158DF /* WikiAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FA9E81F896392005158DF /* WikiAnnotation.swift */; };
+		11422F1D1FFDE0D7001588D0 /* WikiCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11422F1B1FFDE0D7001588D0 /* WikiCalloutView.swift */; };
+		11422F1E1FFDE0D7001588D0 /* WikiCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11422F1C1FFDE0D7001588D0 /* WikiCalloutView.xib */; };
+		114BDFAE1FFEA14B006F6C2C /* WikiAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BDFAD1FFEA14B006F6C2C /* WikiAnnotationView.swift */; };
 		118591E51F0F237400F427F3 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 118591E41F0F237400F427F3 /* Cartfile */; };
 		118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591EC1F0F2B9800F427F3 /* Macros.swift */; };
 		118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118591EE1F0F2F7A00F427F3 /* Environment.swift */; };
@@ -50,6 +53,9 @@
 		112FA9E41F8914D2005158DF /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		112FA9E61F891529005158DF /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 		112FA9E81F896392005158DF /* WikiAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAnnotation.swift; sourceTree = "<group>"; };
+		11422F1B1FFDE0D7001588D0 /* WikiCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiCalloutView.swift; sourceTree = "<group>"; };
+		11422F1C1FFDE0D7001588D0 /* WikiCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiCalloutView.xib; sourceTree = "<group>"; };
+		114BDFAD1FFEA14B006F6C2C /* WikiAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAnnotationView.swift; sourceTree = "<group>"; };
 		118591E41F0F237400F427F3 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		118591EC1F0F2B9800F427F3 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		118591EE1F0F2F7A00F427F3 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -110,6 +116,15 @@
 			name = ViewModels;
 			sourceTree = "<group>";
 		};
+		114BDFAF1FFFDC4E006F6C2C /* annotation */ = {
+			isa = PBXGroup;
+			children = (
+				112FA9E81F896392005158DF /* WikiAnnotation.swift */,
+				114BDFAD1FFEA14B006F6C2C /* WikiAnnotationView.swift */,
+			);
+			name = annotation;
+			sourceTree = "<group>";
+		};
 		118591E81F0F250200F427F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,9 +149,9 @@
 		118591F41F0F40EC00F427F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				114BDFAF1FFFDC4E006F6C2C /* annotation */,
 				118591F51F0F415A00F427F3 /* WikiEntryItem.swift */,
 				118592041F0F4DD000F427F3 /* WikiEntries.swift */,
-				112FA9E81F896392005158DF /* WikiAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -167,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				11B673791F834517006ADF40 /* WikiEntryItemListTableViewCell.swift */,
+				11422F1B1FFDE0D7001588D0 /* WikiCalloutView.swift */,
+				11422F1C1FFDE0D7001588D0 /* WikiCalloutView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -276,6 +293,7 @@
 				22CEB4861DDC12AC00F67E1B /* Assets.xcassets in Resources */,
 				118591E51F0F237400F427F3 /* Cartfile in Resources */,
 				22CEB4841DDC12AC00F67E1B /* Main.storyboard in Resources */,
+				11422F1E1FFDE0D7001588D0 /* WikiCalloutView.xib in Resources */,
 				118591F11F0F30B100F427F3 /* environment.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FB1BF11F8B33A9009217ED /* WebViewController.swift in Sources */,
+				114BDFAE1FFEA14B006F6C2C /* WikiAnnotationView.swift in Sources */,
 				118592051F0F4DD000F427F3 /* WikiEntries.swift in Sources */,
 				11B6737A1F834517006ADF40 /* WikiEntryItemListTableViewCell.swift in Sources */,
 				118591ED1F0F2B9800F427F3 /* Macros.swift in Sources */,
@@ -316,6 +335,7 @@
 				118592081F106E9900F427F3 /* WebServices.swift in Sources */,
 				112FA9DF1F8891D6005158DF /* WikiViewModel.swift in Sources */,
 				11B673771F8340F6006ADF40 /* SettingsViewController.swift in Sources */,
+				11422F1D1FFDE0D7001588D0 /* WikiCalloutView.swift in Sources */,
 				118591EF1F0F2F7A00F427F3 /* Environment.swift in Sources */,
 				112FA9E91F896392005158DF /* WikiAnnotation.swift in Sources */,
 				22CEB4811DDC12AC00F67E1B /* MapViewController.swift in Sources */,
